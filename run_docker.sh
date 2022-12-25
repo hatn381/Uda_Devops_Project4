@@ -10,5 +10,5 @@ docker build --tag=hatn5/udacitydevops .
 docker image ls
 # Step 3: 
 # Run flask app
-sudo /home/ec2-user/environment/.devops/bin/python3 app.py
+sudo /home/ec2-user/.devops/bin/python3 app.py
 docker run -it hatn5/udacitydevops bash
