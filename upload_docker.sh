@@ -10,7 +10,7 @@ dockerpath=hatn5/udacitydevops
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-docker tag devops-project4 $dockerpath
+docker tag udacitydevops $dockerpath
 # Step 3:
 # Push image to a docker repository
 docker login
