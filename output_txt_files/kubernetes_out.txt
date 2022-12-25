@@ -1,1 +1,55 @@
-<paste log output from Kubernetes-mediated prediction, here>
+(.devops) voclabs:~/Project4 (master)> kubectl get pods
+NAME                                  READY   STATUS    RESTARTS   AGE
+devop-project4-app-654666748d-r9478   1/1     Running   0          11m
+(.devops) voclabs:~/Project4 (master)> kubectl logs devop-project4-app-654666748d-r9478
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 282-726-774
+[2022-12-25 11:01:11,818] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-12-25 11:01:11,832] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:01:11,841] INFO in app: Calling scale method with payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:01:11,845] INFO in app: The prediction value: [20.35373177134412]
+127.0.0.1 - - [25/Dec/2022 11:01:11] "POST /predict HTTP/1.1" 200 -
+[2022-12-25 11:02:34,349] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-12-25 11:02:34,363] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:02:34,373] INFO in app: Calling scale method with payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:02:34,376] INFO in app: The prediction value: [20.35373177134412]
+127.0.0.1 - - [25/Dec/2022 11:02:34] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [25/Dec/2022 11:05:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Dec/2022 11:05:33] "GET /favicon.ico HTTP/1.1" 404 -
+[2022-12-25 11:08:20,339] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-12-25 11:08:20,377] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:08:20,415] INFO in app: Calling scale method with payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:08:20,431] INFO in app: The prediction value: [20.35373177134412]
+127.0.0.1 - - [25/Dec/2022 11:08:20] "POST /predict HTTP/1.1" 200 -
+[2022-12-25 11:08:29,378] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-12-25 11:08:29,388] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:08:29,397] INFO in app: Calling scale method with payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-12-25 11:08:29,401] INFO in app: The prediction value: [20.35373177134412]
+127.0.0.1 - - [25/Dec/2022 11:08:29] "POST /predict HTTP/1.1" 200 -
