@@ -6,21 +6,21 @@ jobs:
   build:
     docker:
       - image: python:3.7.13
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            make install
-            
-      - run:
-          name: run lint
-          command: |
-            . venv/bin/activate
-            make lint 
+  working_directory: ~/repo
+  steps:
+    - checkout
+    - run:
+        name: install dependencies
+        command: |
+          python3 -m venv venv
+          . venv/bin/activate
+          make install
+
+    - run:
+        name: run lint
+        command: |
+          . venv/bin/activate
+          make lint
 workflows:
   build-workflow:
     jobs:
