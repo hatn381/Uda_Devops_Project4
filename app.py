@@ -1,4 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import (
+  Flask,
+  request,
+  jsonify
+)
 from flask.logging import create_logger
 import logging
 
@@ -12,8 +16,7 @@ LOG.setLevel(logging.INFO)
 
 def scale(payload):
     """Scales Payload"""
-    
-    LOG.info(f"Scaling Payload: \n{payload}")
+    LOG.info(f"Calling scale method with payload: \n{payload}")
     scaler = StandardScaler().fit(payload.astype(float))
     scaled_adhoc_predict = scaler.transform(payload.astype(float))
     return scaled_adhoc_predict
@@ -63,6 +66,7 @@ def predict():
     # get an output prediction from the pretrained model, clf
     prediction = list(clf.predict(scaled_payload))
     # TO DO:  Log the output prediction value
+    LOG.info(f"The prediction value: {prediction}")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
